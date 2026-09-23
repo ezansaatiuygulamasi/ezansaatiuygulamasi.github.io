@@ -2,38 +2,435 @@
 <html lang="tr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ezan Saati Uygulaması</title>
-<meta name="description" content="Ezan Saati Uygulaması — bulunduğun yere göre namaz vakitleri, ezan alarmı, kıble ve dualar. Hesap gerektirmez; vakitler, alarm ve kıble internetsiz çalışır.">
-<link rel="stylesheet" href="stil.css">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ezan Saati Uygulaması — Namaz vakitleri, vakit alarmı, kıble ve dualar</title>
+<meta name="description" content="Ezan Saati Uygulaması — bulunduğun yere göre namaz vakitleri, vakit alarmı, kıble ve dualar. Hesap gerektirmez; vakitler, alarm ve kıble internetsiz çalışır.">
+<meta name="theme-color" content="#0D121F">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://ezansaatiuygulamasi.github.io/">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:site_name" content="Ezan Saati Uygulaması">
+<meta property="og:title" content="Ezan Saati Uygulaması">
+<meta property="og:description" content="Bulunduğun yere göre namaz vakitleri, vakit alarmı, kıble ve dualar. Hesap yok; vakitler, alarm ve kıble internetsiz çalışır.">
+<meta property="og:url" content="https://ezansaatiuygulamasi.github.io/">
+<meta property="og:image" content="https://ezansaatiuygulamasi.github.io/og-gorsel.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Altın hilal ve cami logosu, altında Ezan Saati Uygulaması yazısı">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="image" href="varliklar/sahne/cami-dikey.webp" media="(max-width: 759px)">
+<link rel="preload" as="image" href="varliklar/sahne/cami-genis.webp" media="(min-width: 760px)">
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body>
-<main>
-  <h1>Ezan Saati Uygulaması</h1>
-  <p class="alt">Bulunduğun yere göre namaz vakitleri, ezan alarmı, kıble ve dualar.</p>
-  <nav><a href="gizlilik.html">Gizlilik</a><a href="#destek">Destek</a></nav>
+<a class="atla" href="#icerik">İçeriğe geç</a>
 
-  <div class="kart">
-    <p>Hesap yok. Vakitler, ezan alarmı ve kıble telefonunda hesaplanır ve internetsiz çalışır; konumun telefonundan çıkmaz. Giderleri karşılamak için ana ekranın altında küçük, kişiselleştirilmemiş bir reklam gösterilir. Alarmlarda ve bildirimlerde reklam yoktur.</p>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="yildiz" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1.5c.6 5.6 4.9 9.9 10.5 10.5-5.6.6-9.9 4.9-10.5 10.5C11.4 16.9 7.1 12.6 1.5 12 7.1 11.4 11.4 7.1 12 1.5z"/></symbol>
+  <symbol id="i-hilal" viewBox="0 0 24 24"><path fill="currentColor" d="M15.6 3.6a8.6 8.6 0 1 0 4.8 13.4A7 7 0 0 1 15.6 3.6z"/></symbol>
+  <symbol id="i-vakit" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.6"/><path d="M12 6.8V12l3.4 2.2"/><path d="M12 2.2v1.2M12 20.6v1.2M2.2 12h1.2M20.6 12h1.2"/></g></symbol>
+  <symbol id="i-alarm" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6.4 16.6V11a5.6 5.6 0 0 1 11.2 0v5.6l1.6 1.9H4.8z"/><path d="M9.9 20.6a2.3 2.3 0 0 0 4.2 0"/><path d="M12 3v2.4"/></g></symbol>
+  <symbol id="i-yarin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.8 17.8h18.4"/><path d="M7.2 17.8a4.8 4.8 0 0 1 9.6 0"/><path d="M12 7.4v2.2M5.3 10.4l1.5 1.5M18.7 10.4l-1.5 1.5"/><path d="M9.6 21h4.8"/></g></symbol>
+  <symbol id="i-kible" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.6"/><path d="M12 5.6l2.4 6.4-2.4 6.4-2.4-6.4z"/><path d="M12 5.6l2.4 6.4H9.6z" fill="currentColor" stroke="none"/></g></symbol>
+  <symbol id="i-dua" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.6C10 5.2 7.2 4.7 4 5.1v12.6c3.2-.4 6 .1 8 1.5 2-1.4 4.8-1.9 8-1.5V5.1c-3.2-.4-6 .1-8 1.5z"/><path d="M12 6.6v12.6"/></g></symbol>
+  <symbol id="i-tema" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><path d="M6 21V11.5a6 6 0 0 1 12 0V21z"/><path d="M9.5 21v-7a2.5 2.5 0 0 1 5 0v7"/><path d="M4 21h16" stroke-linecap="round"/></g></symbol>
+  <symbol id="i-hesap" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><circle cx="12" cy="8.5" r="3.6"/><path d="M4.8 20c.9-3.6 3.8-5.6 7.2-5.6s6.3 2 7.2 5.6"/><path d="M3.5 3.5l17 17"/></g></symbol>
+  <symbol id="i-cevrimdisi" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.4a9.5 9.5 0 0 1 13 0M8.6 15.8a5 5 0 0 1 6.8 0"/><circle cx="12" cy="19.2" r="1" fill="currentColor"/><path d="M3.5 3.5l17 17"/></g></symbol>
+  <symbol id="i-konum" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><path d="M12 21.5s-7-6.1-7-11.6a7 7 0 0 1 14 0c0 5.5-7 11.6-7 11.6z"/><circle cx="12" cy="9.8" r="2.6"/></g></symbol>
+  <symbol id="i-reklam" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="2.6"/><rect x="8.2" y="16.2" width="7.6" height="2.6" rx=".6" fill="currentColor" fill-opacity=".35"/></g></symbol>
+  <symbol id="i-bilgi" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6"/><circle cx="12" cy="7.6" r=".9" fill="currentColor"/></g></symbol>
+  <symbol id="i-zarf" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="m4 7 8 6 8-6"/></g></symbol>
+  <symbol id="i-kalkan" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 5.8v5.4c0 4.6 3 8.1 7 9.8 4-1.7 7-5.2 7-9.8V5.8z"/><path d="m9 12 2.2 2.2L15.5 10"/></g></symbol>
+</svg>
+
+<header class="ust">
+  <div class="ust__ic">
+    <a class="marka" href="./" aria-label="Ezan Saati Uygulaması, ana sayfa">
+      <img class="marka__simge" src="varliklar/marka/simge-72.webp" srcset="varliklar/marka/simge-72.webp 2x, varliklar/marka/simge-108.webp 3x" width="36" height="36" alt="">
+      <span class="marka__ad">Ezan Saati <span>Uygulaması</span></span>
+    </a>
+    <nav class="ust__nav" aria-label="Site">
+      <a href="#ozellikler">Özellikler</a>
+      <a href="gizlilik.html">Gizlilik</a>
+      <a class="ust__destek" href="#destek">Destek</a>
+    </nav>
   </div>
+</header>
 
-  <h2 id="destek">Destek</h2>
-  <p>Soru, öneri ya da yanlış gördüğün bir vakit için bize yaz:
-     <a href="mailto:ezansaatiuygulamasi@gmail.com">ezansaatiuygulamasi@gmail.com</a></p>
+<main id="icerik">
 
-  <p>Uygunsuz bir reklam görürsen reklamın üstündeki <strong>Bildir</strong> bağlantısını kullan ya da bize yaz; reklamı engelleriz.</p>
+  <!-- ============ KAHRAMAN ============ -->
+  <section class="kahraman" aria-labelledby="baslik">
+    <div class="kahraman__sahne" aria-hidden="true">
+      <picture>
+        <source media="(min-width: 760px)" srcset="varliklar/sahne/cami-genis.webp" width="1400" height="1630">
+        <img src="varliklar/sahne/cami-dikey.webp" alt="" width="900" height="1609" fetchpriority="high" decoding="async">
+      </picture>
+    </div>
+    <div class="kahraman__icerik">
+      <div class="amblem">
+        <img src="varliklar/marka/amblem-160.webp" srcset="varliklar/marka/amblem-160.webp 1x, varliklar/marka/amblem-320.webp 2x, varliklar/marka/amblem-480.webp 3x" alt="Ezan Saati Uygulaması logosu: altın hilalin içinde kubbeli, minareli bir cami" width="160" height="160" fetchpriority="high">
+      </div>
+      <p class="ust-yazi"><span class="ust-yazi__marka">iPhone</span> için namaz vakti uygulaması</p>
+      <h1 id="baslik">Ezan Saati Uygulaması</h1>
+      <div class="sus" aria-hidden="true"><svg><use href="#yildiz"/></svg></div>
+      <p class="vaat">Bulunduğun yere göre namaz vakitleri, vakit alarmı, kıble ve dualar.</p>
+      <p class="yakinda">
+        <span class="yakinda__muhur" aria-hidden="true"><svg><use href="#i-hilal"/></svg></span>
+        <span class="yakinda__metin"><span class="yakinda__ust">Yakında</span> <span class="yakinda__alt">App Store’da</span></span>
+      </p>
+      <ul class="guven">
+        <li>Hesap yok</li>
+        <li>İnternetsiz çalışır</li>
+        <li>Konumun telefonunda kalır</li>
+      </ul>
+    </div>
+  </section>
 
-  <h2>Ezan çalmıyorsa</h2>
-  <ol>
-    <li>Uygulamada <strong>Menü → Uyarılar → Yarın sabah çalacak mı?</strong> ekranını aç. İzin durumunu ve sıradaki planlı uyarıyı orada görürsün; deneme alarmı da kurabilirsin.</li>
-    <li>iPhone <strong>Ayarlar → Ezan Saati Uygulaması</strong> altında bildirim ve alarm izinlerinin açık olduğunu kontrol et.</li>
-    <li>Bir Odak modu (Uyku, İş vb.) açıksa Ezan Saati Uygulaması'nın o modda izinli olduğundan emin ol.</li>
-  </ol>
+  <!-- ============ VİTRİN: ilk ekranda yükselen üç ekran ============ -->
+  <figure class="vitrin">
+    <div class="telefonlar">
+      <div class="telefon telefon--yan telefon--sol">
+        <img src="varliklar/ekranlar/dualar-320.webp" srcset="varliklar/ekranlar/dualar-320.webp 320w, varliklar/ekranlar/dualar-640.webp 640w" sizes="(min-width: 760px) 224px, 118px" alt="Dualar ekranı: en üstte arama kutusu ve günün duası kartı, altında Sabah ve Akşam Zikirleri, Namaz Sonrası Tesbihat, Uyku ve Uyanma, Yemek gibi dua bölümleri" width="320" height="695" decoding="async">
+      </div>
+      <div class="telefon telefon--orta">
+        <img src="varliklar/ekranlar/ana-ekran-320.webp" srcset="varliklar/ekranlar/ana-ekran-320.webp 320w, varliklar/ekranlar/ana-ekran-640.webp 640w" sizes="(min-width: 760px) 274px, 186px" alt="Ana ekran: üstte Ankara için İmsak 05.06, Güneş 06.30, Öğle 12.46, İkindi 16.11, Akşam 18.52, Yatsı 20.10; ortada güneşin doğuşuna kalan süre 0.44.20; altta cami silüeti ile Kıble, Dualar, Günün Duası ve Menü düğmeleri" width="320" height="695" decoding="async" fetchpriority="high">
+      </div>
+      <div class="telefon telefon--yan telefon--sag">
+        <img src="varliklar/ekranlar/temalar-320.webp" srcset="varliklar/ekranlar/temalar-320.webp 320w, varliklar/ekranlar/temalar-640.webp 640w" sizes="(min-width: 760px) 224px, 118px" alt="Temalar ekranı: Ay Suyu temasının önizlemesi, gece denizi ve kıyıda cami silüeti; altında Bu temayı kullan düğmesi" width="320" height="695" decoding="async">
+      </div>
+    </div>
+    <figcaption class="sekil"><span class="sekil__no">Şekil 1</span> Ana ekran: bulunduğun yerin vakitleri ve sıradaki vakte kalan süre. Solda Dualar, sağda Temalar.</figcaption>
+  </figure>
 
-  <h2>Vakitler nasıl hesaplanıyor?</h2>
-  <p>Diyanet İşleri Başkanlığı'nın yöntemiyle (imsak 18°, yatsı Türkiye'de 17°, Diyanet'in 16° kullandığı ülkelerde 16°; temkin uygulamalı), bulunduğun yerin koordinatına göre, telefonunda hesaplanır. Diyanet bir ilçenin takvimini o ilçedeki tek bir nokta için yayınlar. Aynı nokta için karşılaştırdığımızda (Türkiye'de 243 bölge, 396 gün) fark hiçbir gün 1 dakikayı geçmedi ve hep ihtiyatlı yönde kaldı: imsak ve güneş hiç daha geç, diğer vakitler hiç daha erken çıkmadı. Bulunduğun nokta Diyanet'in noktasından farklıysa vakit senin noktana göre hesaplanır; bu yüzden ilçe takviminden birkaç dakika farklı görebilirsin. Yurt dışında yaz aylarında imsak erken, yatsı geç tutulur; bu günler uygulamada "tahmini" diye işaretlenir.</p>
+  <!-- ============ NE YAPAR? dizin + bölümler ============ -->
+  <section class="ozellikler" id="ozellikler" aria-labelledby="ozellik-baslik">
+    <div class="kap">
+      <header class="bolum-bas bolum-bas--kemer">
+        <svg class="kemer-cizim" viewBox="0 0 400 300" aria-hidden="true" focusable="false">
+          <g class="kemer-cizim__insa" fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M-10 220H410" stroke-dasharray="2 6"/>
+            <circle cx="270" cy="220" r="210" stroke-dasharray="2 7"/>
+            <circle cx="130" cy="220" r="210" stroke-dasharray="2 7"/>
+            <path d="M262 220h16M270 212v16M122 220h16M130 212v16"/>
+          </g>
+          <g fill="none" stroke="currentColor" stroke-linecap="round">
+            <path class="ciz" pathLength="1" stroke-width="1.6" d="M60 300V220A210 210 0 0 1 200 22 210 210 0 0 1 340 220V300"/>
+            <path class="ciz ciz--gec" pathLength="1" stroke-width="1" d="M72 300V220A198 198 0 0 1 200 34.8 198 198 0 0 1 328 220V300"/>
+            <path d="M48 220h24M328 220h24" stroke-width="1"/>
+          </g>
+          <use href="#yildiz" x="191" y="0" width="18" height="18" fill="currentColor" class="kemer-cizim__yildiz"/>
+        </svg>
+        <p class="ust-yazi">İlk sürümde</p>
+        <h2 id="ozellik-baslik">Ne yapar?</h2>
+        <p class="bolum-bas__alt">Her vakit, sakin bir ekranda.</p>
+      </header>
 
-  <footer>Ezan Saati Uygulaması, Diyanet İşleri Başkanlığı ile resmî bir bağı olmayan bağımsız bir uygulamadır.</footer>
+      <ol class="dizin" role="list">
+        <li><a href="#vakit"><svg aria-hidden="true"><use href="#i-vakit"/></svg><span class="dizin__ad">Namaz vakitleri</span><span class="dizin__alt">Konumuna göre, Diyanet yöntemiyle</span></a></li>
+        <li><a href="#alarm"><svg aria-hidden="true"><use href="#i-alarm"/></svg><span class="dizin__ad">Vakit alarmı</span><span class="dizin__alt">Vakit girince alarm, istersen öncesinde hatırlatma</span></a></li>
+        <li><a href="#yarin-sabah"><svg aria-hidden="true"><use href="#i-yarin"/></svg><span class="dizin__ad">Yarın sabah çalacak mı?</span><span class="dizin__alt">İzinleri ve sıradaki uyarıyı tek ekranda gösterir</span></a></li>
+        <li><a href="#kible"><svg aria-hidden="true"><use href="#i-kible"/></svg><span class="dizin__ad">Kıble pusulası</span><span class="dizin__alt">Kâbe’yi tepeye getir, titreşimle haber verir</span></a></li>
+        <li><a href="#dualar"><svg aria-hidden="true"><use href="#i-dua"/></svg><span class="dizin__ad">Dualar</span><span class="dizin__alt">Yaklaşık 80 dua, künyesiyle</span></a></li>
+        <li><a href="#temalar"><svg aria-hidden="true"><use href="#i-tema"/></svg><span class="dizin__ad">15 tema</span><span class="dizin__alt">Hepsi ücretsiz</span></a></li>
+      </ol>
+
+      <!-- I · Vakit -->
+      <article class="bolum" id="vakit" aria-labelledby="b1">
+        <div class="bolum__metin belir">
+          <p class="bolum__no"><span aria-hidden="true">I</span>Namaz vakti</p>
+          <h3 id="b1">Bulunduğun noktanın vakti</h3>
+          <p>Namaz vakitleri konumuna göre, her ilçe ve her nokta için Diyanet İşleri Başkanlığı’nın yöntemiyle hesaplanır. Hesap telefonunda yapılır; internet gerekmez.</p>
+          <ul class="imler">
+            <li>Konum izni vermek zorunda değilsin; vermezsen yerini listeden seçebilirsin.</li>
+          </ul>
+          <a class="bag" href="#hesap">Vakitler nasıl hesaplanıyor? <span aria-hidden="true">→</span></a>
+        </div>
+        <figure class="bolum__gorsel yay-kap belir">
+          <svg class="yay" viewBox="0 0 480 300" role="img" aria-labelledby="yay-t">
+            <title id="yay-t">Güneşin gün içindeki yolu: imsakta ufkun 18° altında, güneş vaktinde ufukta, öğlede en yüksekte, akşamda yine ufukta, yatsıda Türkiye’de ufkun 17° altında.</title>
+            <defs>
+              <linearGradient id="yay-gece" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ccab6b" stop-opacity=".12"/><stop offset="1" stop-color="#ccab6b" stop-opacity="0"/></linearGradient>
+              <linearGradient id="yay-yatay"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".2" stop-color="#fff"/><stop offset=".8" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+              <linearGradient id="yay-ufuk"><stop offset="0" stop-color="#ccab6b" stop-opacity="0"/><stop offset=".15" stop-color="#ccab6b" stop-opacity=".7"/><stop offset=".85" stop-color="#ccab6b" stop-opacity=".7"/><stop offset="1" stop-color="#ccab6b" stop-opacity="0"/></linearGradient>
+              <mask id="yay-maske"><rect x="0" y="200" width="480" height="100" fill="url(#yay-yatay)"/></mask>
+              <radialGradient id="yay-gunes"><stop offset="0" stop-color="#fae6ad"/><stop offset="1" stop-color="#ccab6b"/></radialGradient>
+            </defs>
+            <rect x="0" y="200" width="480" height="100" fill="url(#yay-gece)" mask="url(#yay-maske)"/>
+            <circle cx="240" cy="200" r="150" fill="none" stroke="#ccab6b" stroke-opacity=".16" stroke-dasharray="2 5"/>
+            <path d="M90 200A150 150 0 0 1 390 200" fill="none" stroke="#ccab6b" stroke-width="1.6"/>
+            <path d="M97.3 246.4A150 150 0 0 1 90 200" fill="none" stroke="#ccab6b" stroke-width="1.6" stroke-dasharray="3 4"/>
+            <path d="M390 200A150 150 0 0 1 383.4 243.9" fill="none" stroke="#ccab6b" stroke-width="1.6" stroke-dasharray="3 4"/>
+            <line x1="10" y1="200" x2="470" y2="200" stroke="url(#yay-ufuk)"/>
+            <text class="yay__soluk" x="240" y="226" text-anchor="middle">ufuk</text>
+            <g fill="#ccab6b">
+              <circle cx="97.3" cy="246.4" r="5"/><circle cx="90" cy="200" r="5"/>
+              <circle cx="354.9" cy="103.6" r="5"/><circle cx="390" cy="200" r="5"/><circle cx="383.4" cy="243.9" r="5"/>
+            </g>
+            <circle cx="240" cy="50" r="18" fill="#fae6ad" fill-opacity=".12"/>
+            <circle cx="240" cy="50" r="9" fill="url(#yay-gunes)"/>
+            <text x="240" y="20" text-anchor="middle">Öğle</text>
+            <text x="370" y="100">İkindi</text>
+            <text x="76" y="194" text-anchor="end">Güneş</text>
+            <text x="404" y="194">Akşam</text>
+            <text x="97" y="274" text-anchor="middle">İmsak</text><text class="yay__derece" x="97" y="294" text-anchor="middle">ufkun 18° altı</text>
+            <text x="383" y="274" text-anchor="middle">Yatsı</text><text class="yay__derece" x="383" y="294" text-anchor="middle">Türkiye’de 17° altı</text>
+          </svg>
+          <figcaption class="sekil"><span class="sekil__no">Şekil 2</span> Şematik çizim: imsak ve yatsı, güneşin ufkun altındaki açısına göre belirlenir.</figcaption>
+        </figure>
+      </article>
+
+      <!-- II · Alarm -->
+      <article class="bolum bolum--ters" id="alarm" aria-labelledby="b2">
+        <div class="bolum__metin belir">
+          <p class="bolum__no"><span aria-hidden="true">II</span>Vakit alarmı</p>
+          <h3 id="b2">Vakit girince alarm, istersen öncesinde hatırlatma</h3>
+          <p>Her vakit için ayrı seçersin: alarm, kısa ses, ses yok ya da kapalı. İstersen vakitten birkaç dakika önce de bir bildirimle haber verir.</p>
+          <p id="yarin-sabah"><strong>“Yarın sabah çalacak mı?”</strong> ekranında izin durumunu ve sıradaki planlı uyarıyı görürsün; deneme alarmı da kurabilirsin.</p>
+          <p class="guvence"><svg aria-hidden="true"><use href="#i-kalkan"/></svg>Alarmlarda ve bildirimlerde reklam yoktur.</p>
+        </div>
+        <figure class="bolum__gorsel belir">
+          <div class="ikili">
+            <div class="telefon">
+              <img src="varliklar/ekranlar/uyarilar-320.webp" srcset="varliklar/ekranlar/uyarilar-320.webp 320w, varliklar/ekranlar/uyarilar-640.webp 640w" sizes="(min-width: 900px) 219px, 159px" alt="Uyarılar ekranı: Tüm vakitler Alarm; altında her vakit için ayrı satır (Güneş kapalı, diğerleri tüm vakitlerle aynı) ve Vakitten önce haber ver satırı" width="320" height="695" loading="lazy" decoding="async">
+            </div>
+            <div class="telefon">
+              <img src="varliklar/ekranlar/yarin-sabah-320.webp" srcset="varliklar/ekranlar/yarin-sabah-320.webp 320w, varliklar/ekranlar/yarin-sabah-640.webp 640w" sizes="(min-width: 900px) 219px, 159px" alt="Yarın sabah çalacak mı ekranı: alarm ve bildirim izninin durumu, kurulu alarm ve bekleyen bildirim sayısı, sıradaki uyarı ve Deneme alarmı kur düğmesi" width="320" height="695" loading="lazy" decoding="async">
+            </div>
+          </div>
+          <figcaption class="sekil"><span class="sekil__no">Şekil 3</span> Solda Uyarılar, sağda “Yarın sabah çalacak mı?” ekranı.</figcaption>
+        </figure>
+      </article>
+
+      <!-- III · Kıble -->
+      <article class="bolum" id="kible" aria-labelledby="b3">
+        <div class="bolum__metin belir">
+          <p class="bolum__no"><span aria-hidden="true">III</span>Kıble</p>
+          <h3 id="b3">Kıble pusulası</h3>
+          <p>Telefonunu çevir, Kâbe’yi tepeye getir; yönü bulduğunda titreşimle haber verir. Kıble yönü de telefonunda, internetsiz hesaplanır.</p>
+        </div>
+        <figure class="bolum__gorsel pusula-kap belir">
+          <div class="pusula" role="img" aria-label="Kıble pusulası çizimi: ortada altın bir gül motifi, iğne tepedeki Kâbe’yi gösteriyor">
+            <svg class="pusula__halka" viewBox="0 0 200 200" aria-hidden="true">
+              <circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-opacity=".45"/>
+              <circle cx="100" cy="100" r="82" fill="none" stroke="currentColor" stroke-opacity=".18"/>
+              <g stroke="currentColor" stroke-width=".8"><line x1="72.7" y1="179.4" x2="69.1" y2="189.8" stroke-opacity="0.8"/><line x1="64.2" y1="180.4" x2="62.2" y2="185.0" stroke-opacity="0.4"/><line x1="57.3" y1="177.0" x2="54.9" y2="181.3" stroke-opacity="0.4"/><line x1="50.8" y1="173.0" x2="48.0" y2="177.1" stroke-opacity="0.4"/><line x1="44.6" y1="168.4" x2="41.5" y2="172.3" stroke-opacity="0.4"/><line x1="38.9" y1="163.3" x2="35.4" y2="166.9" stroke-opacity="0.4"/><line x1="36.6" y1="155.1" x2="28.3" y2="162.3" stroke-opacity="0.8"/><line x1="28.8" y1="151.7" x2="24.8" y2="154.7" stroke-opacity="0.4"/><line x1="24.6" y1="145.3" x2="20.3" y2="147.9" stroke-opacity="0.4"/><line x1="20.9" y1="138.6" x2="16.4" y2="140.8" stroke-opacity="0.4"/><line x1="17.8" y1="131.5" x2="13.2" y2="133.3" stroke-opacity="0.4"/><line x1="15.4" y1="124.3" x2="10.6" y2="125.6" stroke-opacity="0.4"/><line x1="17.5" y1="116.0" x2="6.7" y2="118.1" stroke-opacity="0.8"/><line x1="12.5" y1="109.2" x2="7.5" y2="109.7" stroke-opacity="0.4"/><line x1="12.0" y1="101.5" x2="7.0" y2="101.6" stroke-opacity="0.4"/><line x1="12.2" y1="93.9" x2="7.2" y2="93.5" stroke-opacity="0.4"/><line x1="13.1" y1="86.2" x2="8.1" y2="85.5" stroke-opacity="0.4"/><line x1="14.6" y1="78.7" x2="9.8" y2="77.5" stroke-opacity="0.4"/><line x1="20.6" y1="72.7" x2="10.2" y2="69.1" stroke-opacity="0.8"/><line x1="19.6" y1="64.2" x2="15.0" y2="62.2" stroke-opacity="0.4"/><line x1="23.0" y1="57.3" x2="18.7" y2="54.9" stroke-opacity="0.4"/><line x1="27.0" y1="50.8" x2="22.9" y2="48.0" stroke-opacity="0.4"/><line x1="31.6" y1="44.6" x2="27.7" y2="41.5" stroke-opacity="0.4"/><line x1="36.7" y1="38.9" x2="33.1" y2="35.4" stroke-opacity="0.4"/><line x1="44.9" y1="36.6" x2="37.7" y2="28.3" stroke-opacity="0.8"/><line x1="48.3" y1="28.8" x2="45.3" y2="24.8" stroke-opacity="0.4"/><line x1="54.7" y1="24.6" x2="52.1" y2="20.3" stroke-opacity="0.4"/><line x1="61.4" y1="20.9" x2="59.2" y2="16.4" stroke-opacity="0.4"/><line x1="68.5" y1="17.8" x2="66.7" y2="13.2" stroke-opacity="0.4"/><line x1="75.7" y1="15.4" x2="74.4" y2="10.6" stroke-opacity="0.4"/><line x1="84.0" y1="17.5" x2="81.9" y2="6.7" stroke-opacity="0.8"/><line x1="90.8" y1="12.5" x2="90.3" y2="7.5" stroke-opacity="0.4"/><line x1="98.5" y1="12.0" x2="98.4" y2="7.0" stroke-opacity="0.4"/><line x1="106.1" y1="12.2" x2="106.5" y2="7.2" stroke-opacity="0.4"/><line x1="113.8" y1="13.1" x2="114.5" y2="8.1" stroke-opacity="0.4"/><line x1="121.3" y1="14.6" x2="122.5" y2="9.8" stroke-opacity="0.4"/><line x1="127.3" y1="20.6" x2="130.9" y2="10.2" stroke-opacity="0.8"/><line x1="135.8" y1="19.6" x2="137.8" y2="15.0" stroke-opacity="0.4"/><line x1="142.7" y1="23.0" x2="145.1" y2="18.7" stroke-opacity="0.4"/><line x1="149.2" y1="27.0" x2="152.0" y2="22.9" stroke-opacity="0.4"/><line x1="155.4" y1="31.6" x2="158.5" y2="27.7" stroke-opacity="0.4"/><line x1="161.1" y1="36.7" x2="164.6" y2="33.1" stroke-opacity="0.4"/><line x1="163.4" y1="44.9" x2="171.7" y2="37.7" stroke-opacity="0.8"/><line x1="171.2" y1="48.3" x2="175.2" y2="45.3" stroke-opacity="0.4"/><line x1="175.4" y1="54.7" x2="179.7" y2="52.1" stroke-opacity="0.4"/><line x1="179.1" y1="61.4" x2="183.6" y2="59.2" stroke-opacity="0.4"/><line x1="182.2" y1="68.5" x2="186.8" y2="66.7" stroke-opacity="0.4"/><line x1="184.6" y1="75.7" x2="189.4" y2="74.4" stroke-opacity="0.4"/><line x1="182.5" y1="84.0" x2="193.3" y2="81.9" stroke-opacity="0.8"/><line x1="187.5" y1="90.8" x2="192.5" y2="90.3" stroke-opacity="0.4"/><line x1="188.0" y1="98.5" x2="193.0" y2="98.4" stroke-opacity="0.4"/><line x1="187.8" y1="106.1" x2="192.8" y2="106.5" stroke-opacity="0.4"/><line x1="186.9" y1="113.8" x2="191.9" y2="114.5" stroke-opacity="0.4"/><line x1="185.4" y1="121.3" x2="190.2" y2="122.5" stroke-opacity="0.4"/><line x1="179.4" y1="127.3" x2="189.8" y2="130.9" stroke-opacity="0.8"/><line x1="180.4" y1="135.8" x2="185.0" y2="137.8" stroke-opacity="0.4"/><line x1="177.0" y1="142.7" x2="181.3" y2="145.1" stroke-opacity="0.4"/><line x1="173.0" y1="149.2" x2="177.1" y2="152.0" stroke-opacity="0.4"/><line x1="168.4" y1="155.4" x2="172.3" y2="158.5" stroke-opacity="0.4"/><line x1="163.3" y1="161.1" x2="166.9" y2="164.6" stroke-opacity="0.4"/><line x1="155.1" y1="163.4" x2="162.3" y2="171.7" stroke-opacity="0.8"/><line x1="151.7" y1="171.2" x2="154.7" y2="175.2" stroke-opacity="0.4"/><line x1="145.3" y1="175.4" x2="147.9" y2="179.7" stroke-opacity="0.4"/><line x1="138.6" y1="179.1" x2="140.8" y2="183.6" stroke-opacity="0.4"/><line x1="131.5" y1="182.2" x2="133.3" y2="186.8" stroke-opacity="0.4"/><line x1="124.3" y1="184.6" x2="125.6" y2="189.4" stroke-opacity="0.4"/><line x1="116.0" y1="182.5" x2="118.1" y2="193.3" stroke-opacity="0.8"/><line x1="109.2" y1="187.5" x2="109.7" y2="192.5" stroke-opacity="0.4"/><line x1="101.5" y1="188.0" x2="101.6" y2="193.0" stroke-opacity="0.4"/><line x1="93.9" y1="187.8" x2="93.5" y2="192.8" stroke-opacity="0.4"/><line x1="86.2" y1="186.9" x2="85.5" y2="191.9" stroke-opacity="0.4"/><line x1="78.7" y1="185.4" x2="77.5" y2="190.2" stroke-opacity="0.4"/></g>
+              <g fill="#c9c3b5" font-family="Georgia, serif" font-size="11"><text x="75.9" y="174.0" text-anchor="middle">K</text><text x="30.0" y="79.9" text-anchor="middle">D</text><text x="124.1" y="34.0" text-anchor="middle">G</text><text x="170.0" y="128.1" text-anchor="middle">B</text></g>
+            </svg>
+            <img class="pusula__gul" src="varliklar/sahne/kible-gul.webp" alt="" width="400" height="402" loading="lazy" decoding="async">
+            <svg class="pusula__halka" viewBox="0 0 200 200" aria-hidden="true">
+              <defs><linearGradient id="igne" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fae6ad"/><stop offset="1" stop-color="#856633"/></linearGradient></defs>
+              <path d="M100 24 L105.5 100 L100 112 L94.5 100 Z" fill="url(#igne)"/>
+              <path d="M100 112 L103 100 L100 150 L97 100 Z" fill="#ccab6b" fill-opacity=".25"/>
+              <circle cx="100" cy="100" r="5" fill="#0d121f" stroke="#fae6ad" stroke-width="1.2"/>
+            </svg>
+            <img class="pusula__kabe" src="varliklar/sahne/kabe.webp" alt="" width="96" height="103" loading="lazy" decoding="async">
+          </div>
+          <figcaption class="sekil"><span class="sekil__no">Şekil 4</span> Çizim: iğne tepedeki Kâbe’yi gösterir.</figcaption>
+        </figure>
+      </article>
+
+      <!-- IV · Dualar -->
+      <article class="bolum bolum--ters" id="dualar" aria-labelledby="b4">
+        <div class="bolum__metin belir">
+          <p class="bolum__no"><span aria-hidden="true">IV</span>Dualar</p>
+          <h3 id="b4">Kaynağıyla, künyesiyle dualar</h3>
+          <p>Yaklaşık 80 dua; Arapçası, okunuşu ve anlamıyla. Her gün bir <strong>günün duası</strong>, Cuma, kandil ve bayram gibi günlere özel dualar.</p>
+          <ul class="imler">
+            <li>Dualar hadis kaynaklıdır.</li>
+            <li>Her duanın altında künyesi yazar.</li>
+          </ul>
+        </div>
+        <figure class="bolum__gorsel telefon-sekil belir">
+          <div class="telefon telefon--tek">
+            <img src="varliklar/ekranlar/dua-detay-320.webp" srcset="varliklar/ekranlar/dua-detay-320.webp 320w, varliklar/ekranlar/dua-detay-640.webp 640w" sizes="(min-width: 900px) 236px, 206px" alt="Sabah ve Akşam Zikirleri ekranı: Sübhânallâhi ve bi-hamdih ile Seyyidü’l-istiğfâr dualarının Arapçası, okunuşu ve Türkçe anlamı; altlarında Buhârî ve Müslim künyeleri" width="320" height="695" loading="lazy" decoding="async">
+          </div>
+          <figcaption class="sekil"><span class="sekil__no">Şekil 5</span> Dualar: Arapça metin, okunuş ve anlam; altında künyesi.</figcaption>
+        </figure>
+      </article>
+
+    </div>
+
+    <!-- V · Temalar: ritmi kıran tam genişlik şerit -->
+    <article class="bolum-serit" id="temalar" aria-labelledby="b5">
+      <div class="kap">
+        <div class="bolum__metin bolum__metin--orta belir">
+          <p class="bolum__no"><span aria-hidden="true">V</span>Temalar</p>
+          <h3 id="b5">15 tema, hepsi ücretsiz</h3>
+          <p>Gece mavisinden traverten avluya, ekranı zevkine göre giydir. Temaların hiçbiri ücretli değildir.</p>
+        </div>
+      </div>
+      <figure class="temalar" aria-labelledby="temalar-t">
+        <div class="serit" role="region" aria-label="Tema örnekleri, yana kaydırılabilir" tabindex="0">
+          <ul class="serit__ray">
+            <li><span class="kemerli"><img src="varliklar/temalar/cini-gecesi-180.webp" srcset="varliklar/temalar/cini-gecesi-180.webp 180w, varliklar/temalar/cini-gecesi-360.webp 360w" sizes="(min-width: 900px) 164px, 136px" alt="" width="180" height="391" loading="lazy" decoding="async"></span><span class="serit__ad">Çini Gecesi</span></li>
+            <li><span class="kemerli"><img src="varliklar/temalar/sedir-vadisi-180.webp" srcset="varliklar/temalar/sedir-vadisi-180.webp 180w, varliklar/temalar/sedir-vadisi-360.webp 360w" sizes="(min-width: 900px) 164px, 136px" alt="" width="180" height="391" loading="lazy" decoding="async"></span><span class="serit__ad">Sedir Vadisi</span></li>
+            <li><span class="kemerli"><img src="varliklar/temalar/ay-suyu-180.webp" srcset="varliklar/temalar/ay-suyu-180.webp 180w, varliklar/temalar/ay-suyu-360.webp 360w" sizes="(min-width: 900px) 164px, 136px" alt="" width="180" height="390" loading="lazy" decoding="async"></span><span class="serit__ad">Ay Suyu</span></li>
+            <li><span class="kemerli"><img src="varliklar/temalar/bazalt-180.webp" srcset="varliklar/temalar/bazalt-180.webp 180w, varliklar/temalar/bazalt-360.webp 360w" sizes="(min-width: 900px) 164px, 136px" alt="" width="180" height="390" loading="lazy" decoding="async"></span><span class="serit__ad">Bazalt</span></li>
+            <li><span class="kemerli"><img src="varliklar/temalar/traverten-avlu-180.webp" srcset="varliklar/temalar/traverten-avlu-180.webp 180w, varliklar/temalar/traverten-avlu-360.webp 360w" sizes="(min-width: 900px) 164px, 136px" alt="" width="180" height="391" loading="lazy" decoding="async"></span><span class="serit__ad">Traverten Avlu</span></li>
+            <li><span class="kemerli"><img src="varliklar/temalar/keten-zeytin-180.webp" srcset="varliklar/temalar/keten-zeytin-180.webp 180w, varliklar/temalar/keten-zeytin-360.webp 360w" sizes="(min-width: 900px) 164px, 136px" alt="" width="180" height="389" loading="lazy" decoding="async"></span><span class="serit__ad">Keten ve Zeytin</span></li>
+          </ul>
+        </div>
+        <figcaption class="kap temalar__alt">
+          <span class="sekil" id="temalar-t"><span class="sekil__no">Şekil 6</span> On beş temanın altısının arka planı.</span>
+          <span class="temalar__diger"><span>ve dokuz tema daha:</span> Koyu&nbsp;Stüdyo&nbsp;· Aydınlık&nbsp;· Yüksek&nbsp;Kontrast&nbsp;· Girih&nbsp;· Gece&nbsp;Seher&nbsp;· Pafta&nbsp;· Minimal&nbsp;· Ramazan&nbsp;· Kandil</span>
+        </figcaption>
+      </figure>
+    </article>
+  </section>
+
+  <!-- ============ İLKELER ============ -->
+  <section class="ilkeler" aria-labelledby="ilke-baslik">
+    <div class="kap">
+      <div class="ilke-cerceve belir">
+        <header class="bolum-bas">
+          <p class="ust-yazi">Özen</p>
+          <h2 id="ilke-baslik">Sessiz ilkeler</h2>
+        </header>
+        <ul class="ilke-listesi">
+          <li>
+            <h3><svg aria-hidden="true"><use href="#i-hesap"/></svg>Hesap yok</h3>
+            <p>Senden hesap, ad ya da e-posta istemez.</p>
+          </li>
+          <li>
+            <h3><svg aria-hidden="true"><use href="#i-cevrimdisi"/></svg>İnternetsiz</h3>
+            <p>Vakitler, vakit alarmı ve kıble telefonunda hesaplanır ve internetsiz çalışır.</p>
+          </li>
+          <li>
+            <h3><svg aria-hidden="true"><use href="#i-konum"/></svg>Konumun sende</h3>
+            <p>Konumun telefonundan çıkmaz.</p>
+          </li>
+          <li>
+            <h3><svg aria-hidden="true"><use href="#i-reklam"/></svg>Tek, küçük reklam</h3>
+            <p>Giderleri karşılamak için ana ekranın altında küçük, kişiselleştirilmemiş bir reklam gösterilir. Alarmlarda ve bildirimlerde reklam yoktur.</p>
+          </li>
+        </ul>
+        <p class="ilke-alt"><a class="bag" href="gizlilik.html">Gizlilik politikasının tamamı <span aria-hidden="true">→</span></a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HESAP ============ -->
+  <section class="hesap" id="hesap" aria-labelledby="hesap-baslik">
+    <div class="kap hesap__izgara">
+      <div class="hesap__metin belir">
+        <p class="ust-yazi">Yöntem</p>
+        <h2 id="hesap-baslik">Vakitler nasıl hesaplanıyor?</h2>
+        <p class="bas-harf">Diyanet İşleri Başkanlığı’nın yöntemiyle (imsak 18°, yatsı Türkiye’de 17°, Diyanet’in 16° kullandığı ülkelerde 16°; temkin uygulamalı), bulunduğun yerin koordinatına göre, telefonunda hesaplanır. Diyanet bir ilçenin takvimini o ilçedeki tek bir nokta için yayınlar. Aynı nokta için karşılaştırdığımızda (Türkiye’de 243 bölge, 396 gün) fark hiçbir gün 1 dakikayı geçmedi ve hep ihtiyatlı yönde kaldı: imsak ve güneş hiç daha geç, diğer vakitler hiç daha erken çıkmadı.</p>
+        <p>Bulunduğun nokta Diyanet’in noktasından farklıysa vakit senin noktana göre hesaplanır; bu yüzden ilçe takviminden birkaç dakika farklı görebilirsin. Yurt dışında yaz aylarında imsak erken, yatsı geç tutulur; bu günler uygulamada “tahmini” diye işaretlenir.</p>
+      </div>
+      <aside class="defter belir" aria-labelledby="defter-t">
+        <h3 class="gorunmez" id="defter-t">Hesap yönteminin özeti</h3>
+        <dl class="defter__sayilar">
+          <div><dt>Türkiye’de karşılaştırılan bölge</dt><dd>243</dd></div>
+          <div><dt>Karşılaştırılan gün</dt><dd>396</dd></div>
+          <div><dt>Aynı noktada en büyük fark</dt><dd>≤ 1 dk</dd></div>
+        </dl>
+        <dl class="defter__tablo">
+          <div><dt>Yöntem</dt><dd>Diyanet İşleri Başkanlığı’nın yöntemi</dd></div>
+          <div><dt>İmsak</dt><dd>18°</dd></div>
+          <div><dt>Yatsı</dt><dd>Türkiye’de 17°, Diyanet’in 16° kullandığı ülkelerde 16°</dd></div>
+          <div><dt>Temkin</dt><dd>Uygulanır</dd></div>
+          <div><dt>Nerede</dt><dd>Telefonunda, bulunduğun yerin koordinatına göre</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ DESTEK ============ -->
+  <section class="destek" id="destek" aria-labelledby="destek-baslik">
+    <div class="kap destek__izgara">
+      <div class="destek__giris belir">
+        <p class="ust-yazi">Buradayız</p>
+        <h2 id="destek-baslik">Destek</h2>
+        <p>Soru, öneri ya da yanlış gördüğün bir vakit için bize yaz:</p>
+        <a class="eposta" href="mailto:ezansaatiuygulamasi@gmail.com">
+          <span class="eposta__simge" aria-hidden="true"><svg><use href="#i-zarf"/></svg></span>
+          <span class="eposta__metin"><span class="eposta__etiket">E-posta</span><span class="eposta__adres">ezansaatiuygulamasi<wbr>@gmail.com</span></span>
+        </a>
+        <div class="not-kart">
+          <svg aria-hidden="true"><use href="#i-bilgi"/></svg>
+          <p>Uygunsuz bir reklam görürsen reklamın üstündeki <strong>Bildir</strong> bağlantısını kullan ya da bize yaz; reklamı engelleriz.</p>
+        </div>
+      </div>
+
+      <div class="adimlar-kart belir">
+        <h3>Ezan çalmıyorsa</h3>
+        <ol class="adimlar" role="list">
+          <li><span>Uygulamada <strong class="yol">Menü → Uyarılar → Yarın sabah çalacak mı?</strong> ekranını aç. İzin durumunu ve sıradaki planlı uyarıyı orada görürsün; deneme alarmı da kurabilirsin.</span></li>
+          <li><span>iPhone <strong class="yol">Ayarlar → Ezan Saati Uygulaması</strong> altında bildirim ve alarm izinlerinin açık olduğunu kontrol et.</span></li>
+          <li><span>Bir Odak modu (Uyku, İş vb.) açıksa Ezan Saati Uygulaması’nın o modda izinli olduğundan emin ol.</span></li>
+        </ol>
+      </div>
+
+      <div class="sss belir">
+        <h3>Sık sorulanlar</h3>
+        <div class="sss__liste">
+          <details>
+            <summary>Konum izni vermek zorunda mıyım?</summary>
+            <p>Hayır. Konum izni vermek zorunda değilsin; vermezsen yerini listeden seçebilirsin. Konumun telefonundan çıkmaz.</p>
+          </details>
+          <details>
+            <summary>Hesap açmam gerekiyor mu?</summary>
+            <p>Hayır. Ezan Saati Uygulaması senden hesap, ad ya da e-posta istemez.</p>
+          </details>
+          <details>
+            <summary>İnternet olmadan çalışır mı?</summary>
+            <p>Evet. Vakitler, vakit alarmı ve kıble telefonunda hesaplanır ve internetsiz çalışır.</p>
+          </details>
+          <details>
+            <summary>Reklam nerede görünür?</summary>
+            <p>Giderleri karşılamak için yalnız ana ekranın altında küçük, kişiselleştirilmemiş bir reklam gösterilir. Alarmlarda ve bildirimlerde reklam yoktur. Uygunsuz bir reklam görürsen reklamın üstündeki <strong>Bildir</strong> bağlantısını kullan ya da bize yaz.</p>
+          </details>
+          <details>
+            <summary>Vakitler neden ilçe takviminden farklı olabilir?</summary>
+            <p>Diyanet bir ilçenin takvimini o ilçedeki tek bir nokta için yayınlar. Bulunduğun nokta Diyanet’in noktasından farklıysa vakit senin noktana göre hesaplanır; bu yüzden ilçe takviminden birkaç dakika farklı görebilirsin. <a href="#hesap">Yöntemin ayrıntısı</a></p>
+          </details>
+          <details>
+            <summary>Diyanet’in resmî uygulaması mı?</summary>
+            <p>Hayır. Ezan Saati Uygulaması, Diyanet İşleri Başkanlığı ile resmî bir bağı olmayan bağımsız bir uygulamadır. Vakitler Diyanet İşleri Başkanlığı’nın yöntemiyle hesaplanır.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ KAPANIŞ BANDI: kahramanın yankısı ============ -->
+  <section class="kapanis" aria-labelledby="kapanis-baslik">
+    <div class="kapanis__sahne" aria-hidden="true">
+      <picture>
+        <source media="(min-width: 760px)" srcset="varliklar/sahne/cami-genis.webp" width="1400" height="1630">
+        <img src="varliklar/sahne/cami-dikey.webp" alt="" width="900" height="1609" loading="lazy" decoding="async">
+      </picture>
+    </div>
+    <div class="kapanis__icerik belir">
+      <img class="kapanis__amblem" src="varliklar/marka/amblem-160.webp" srcset="varliklar/marka/amblem-160.webp 1x, varliklar/marka/amblem-320.webp 2x" alt="" width="160" height="160" loading="lazy" decoding="async">
+      <h2 id="kapanis-baslik">Ezan Saati Uygulaması</h2>
+      <p>Vakitler, vakit alarmı ve kıble telefonunda; hesap yok, internet gerekmez.</p>
+      <p class="yakinda yakinda--kucuk">
+        <span class="yakinda__muhur" aria-hidden="true"><svg><use href="#i-hilal"/></svg></span>
+        <span class="yakinda__metin"><span class="yakinda__ust">Yakında</span> <span class="yakinda__alt">App Store’da</span></span>
+      </p>
+    </div>
+  </section>
+
 </main>
+
+<footer class="alt">
+  <div class="kap">
+    <dl class="antet">
+      <div class="antet__uygulama"><dt>Uygulama</dt><dd><img src="varliklar/marka/simge-72.webp" width="28" height="28" alt="" loading="lazy">Ezan Saati Uygulaması</dd></div>
+      <div class="antet__surum"><dt>Sürüm</dt><dd>1.0 · iPhone</dd></div>
+      <div class="antet__sayfalar"><dt>Sayfalar</dt><dd><a href="#destek">Destek</a><a href="gizlilik.html">Gizlilik Politikası</a><a href="gizlilik.html#en" hreflang="en" lang="en">Privacy Policy</a></dd></div>
+      <div class="antet__iletisim"><dt>İletişim</dt><dd><a href="mailto:ezansaatiuygulamasi@gmail.com">ezansaatiuygulamasi<wbr>@gmail.com</a></dd></div>
+    </dl>
+    <p class="alt__not">Ezan Saati Uygulaması, Diyanet İşleri Başkanlığı ile resmî bir bağı olmayan bağımsız bir uygulamadır.</p>
+  </div>
+</footer>
 </body>
 </html>
