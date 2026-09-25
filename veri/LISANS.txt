@@ -1,0 +1,53 @@
+İLÇE SINIRI VERİSİ · Ezan Saati Uygulaması
+
+Lisans: Open Data Commons Open Database License 1.0 (ODbL 1.0)
+https://opendatacommons.org/licenses/odbl/1-0/
+
+Bu klasördeki iki dosya, Ezan Saati Uygulaması'nın Türkiye'de konumun hangi ilçede
+olduğunu bulmak için kullandığı türetilmiş veritabanıdır. ODbL 1.0 ile sunulur.
+
+  ilce-sinir.geojson  973 ilçe sınırı, GeoJSON. Koordinatlar 0,00001 derece.
+                      Özellikler: i (uygulamanın ilçe kataloğundaki sıra), il, ilce.
+  ilce-sinir.bin      Uygulamanın içindeki dosyanın aynısı. İkili 'EZSN' v2 biçimi,
+                      koordinatlar 0,00005 derece.
+                      SHA-256: e206ff7231b0b9b5829ff8c023330070791a62643fe4653130a6463638e970c4
+
+ATIF
+İlçe sınırları © OpenStreetMap katkıcıları, ODbL 1.0 (openstreetmap.org/copyright); OSM Boundaries (osm-boundaries.com) ve geoBoundaries (geoboundaries.org, TUR ADM2, TUR-ADM2-54988432) üzerinden. Veri değiştirildi: sadeleştirildi ve uygulama kataloğuyla eşlendi.
+
+KAYNAK
+geoBoundaries TUR ADM2 (gbOpen), sınır kimliği TUR-ADM2-54988432, yapım tarihi 12.12.2023.
+Metaverideki lisans: Open Data Commons Open Database License 1.0.
+Metaverideki kaynak: OpenStreetMap, OSM Boundaries (osm-boundaries.com).
+
+YAPILAN DEĞİŞİKLİKLER
+1. Her şekil uygulamanın ilçe kataloğundaki bir ilçeyle eşlendi (973 şekil, 973 ilçe).
+2. Komşu ilçelerin ortak kenarı tek kez tutuldu (topoloji korundu) ve Douglas-Peucker
+   yöntemiyle sadeleştirildi. Tolerans 0,0002 derece.
+3. Koordinatlar GeoJSON'da 0,00001 dereceye, uygulamadaki ikili dosyada 0,00005 dereceye
+   nicelendi.
+
+ÜRETİM
+Uygulamanın geliştirme deposunda:
+  Gelistirme/bolge-noktasi/esleme/betikler/02_sinir_esle.py   şekil ile ilçe eşlemesi
+  Gelistirme/bolge-noktasi/esleme/betikler/03_sadelestir.py   sadeleştirme, GeoJSON ve ikili dosya
+  Gelistirme/bolge-noktasi/esleme/betikler/04_denetim.py      sadeleştirilmemiş sınırla karşılaştırma
+  Gelistirme/bolge-noktasi/esleme/betikler/05_ek_olcum.py     ek ölçümler
+  EzanCore/Scripts/bolge-verisi-uret.py                       ikili dosyanın uygulama paketine kopyalanması
+  EzanCore/Sources/EzanCore/IlceSiniri.swift                  ikili biçimin okunması ve ilçe araması
+
+----------------------------------------------------------------------------------------
+
+DISTRICT BOUNDARY DATA · Ezan Saati Uygulaması
+
+Contains information from OpenStreetMap (© OpenStreetMap contributors), obtained via
+OSM Boundaries (osm-boundaries.com) and geoBoundaries (geoboundaries.org, TUR ADM2,
+TUR-ADM2-54988432), which is made available here under the Open Database License (ODbL) 1.0:
+https://opendatacommons.org/licenses/odbl/1-0/
+
+The two files in this folder are the derived database the app uses to find which district
+of Türkiye a location falls in. ilce-sinir.bin is identical to the file inside the app.
+Changes: each shape was matched to a district in the app's catalogue; boundaries were
+simplified with Douglas-Peucker while keeping shared edges between neighbours (tolerance
+0.0002 degrees); coordinates were quantized to 0.00001 degrees (GeoJSON) and 0.00005
+degrees (binary file).
