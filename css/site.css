@@ -357,7 +357,7 @@ h3 { font-size: clamp(1.55rem, 1.25rem + 1vw, 2.05rem); line-height: 1.2; text-w
   .bolum-bas--kemer .bolum-bas__alt { max-width: none; }
 }
 
-/* Kısa dizin: altı iş, her biri kendi bölümüne atlar */
+/* Kısa dizin: yedi iş, her biri kendi bölümüne atlar */
 .dizin {
   display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;
   margin: 0; padding: 0; list-style: none;
@@ -387,6 +387,12 @@ h3 { font-size: clamp(1.55rem, 1.25rem + 1vw, 2.05rem); line-height: 1.2; text-w
   .dizin svg { grid-row: 1 / span 2; width: 30px; height: 30px; margin: 1px 0 0; }
   .dizin__ad { font-size: 1.3rem; }
   .dizin a::after { right: 20px; top: 26px; }
+}
+/* Satırda tek kalan son kart satırı doldurur (7 iş: 2 sütunda 7., 3 sütunda 7. kart) */
+.dizin > li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+@media (min-width: 900px) {
+  .dizin > li:last-child:nth-child(odd) { grid-column: auto; }
+  .dizin > li:last-child:nth-child(3n+1) { grid-column: 1 / -1; }
 }
 
 /* Bölümler */
@@ -445,6 +451,22 @@ h3 { font-size: clamp(1.55rem, 1.25rem + 1vw, 2.05rem); line-height: 1.2; text-w
 @media (max-width: 559px) {
   /* mobilde kenardan kenara: çizimdeki en küçük yazı 13 px'in altına düşmesin */
   .yay-kap .yay { width: calc(100% + 2 * var(--kenar)); max-width: none; margin-inline: calc(-1 * var(--kenar)); }
+}
+
+/* Kilit ekranı widget çizimi (şematik; vakitler Şekil 1'deki ekranla aynı) */
+.kilit-kap { width: 100%; }
+.kilit { display: block; width: 100%; max-width: 440px; height: auto; margin-inline: auto; }
+.kilit text { font-family: var(--sans); fill: var(--metin-2); }
+.kilit .kilit__satir { font-size: 15px; fill: var(--soluk); }
+.kilit .kilit__saat { font-size: 68px; font-weight: 600; fill: var(--fildisi); font-variant-numeric: lining-nums tabular-nums; }
+.kilit .kilit__ad { font-size: 14px; }
+.kilit .kilit__vakit { font-family: ui-serif, var(--serif); font-size: 18px; fill: var(--fildisi); font-variant-numeric: lining-nums tabular-nums; }
+.kilit .kilit__gecmis { font-weight: 400; fill: var(--metin-2); }
+.kilit .kilit__gelecek { font-weight: 600; }
+.kilit .kilit__siradaki { font-weight: 800; fill: var(--fildisi); }
+@media (max-width: 559px) {
+  /* mobilde kenardan kenara: en küçük yazı 13 px'in altına düşmesin */
+  .kilit-kap .kilit { width: calc(100% + 2 * var(--kenar)); max-width: none; margin-inline: calc(-1 * var(--kenar)); }
 }
 
 /* Kıble pusulası çizimi */
