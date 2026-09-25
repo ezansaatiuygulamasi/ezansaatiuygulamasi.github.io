@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Ezan Saati Uygulaması — Namaz vakitleri, vakit alarmı, kıble ve dualar</title>
-<meta name="description" content="Ezan Saati Uygulaması — bulunduğun yere göre namaz vakitleri, vakit alarmı, kıble ve dualar. Hesap gerektirmez; vakitler, alarm ve kıble internetsiz çalışır.">
+<meta name="description" content="Ezan Saati Uygulaması — bulunduğun yere göre namaz vakitleri, vakit alarmı, kilit ekranı ve ana ekran widget’ları, kıble ve dualar. Hesap gerektirmez; vakitler, alarm ve kıble internetsiz çalışır.">
 <meta name="theme-color" content="#0D121F">
 <meta name="color-scheme" content="dark">
 <link rel="canonical" href="https://ezansaatiuygulamasi.github.io/">
@@ -15,7 +15,7 @@
 <meta property="og:locale" content="tr_TR">
 <meta property="og:site_name" content="Ezan Saati Uygulaması">
 <meta property="og:title" content="Ezan Saati Uygulaması">
-<meta property="og:description" content="Bulunduğun yere göre namaz vakitleri, vakit alarmı, kıble ve dualar. Hesap yok; vakitler, alarm ve kıble internetsiz çalışır.">
+<meta property="og:description" content="Bulunduğun yere göre namaz vakitleri, vakit alarmı, widget’lar, kıble ve dualar. Hesap yok; vakitler, alarm ve kıble internetsiz çalışır.">
 <meta property="og:url" content="https://ezansaatiuygulamasi.github.io/">
 <meta property="og:image" content="https://ezansaatiuygulamasi.github.io/og-gorsel.jpg">
 <meta property="og:image:type" content="image/jpeg">
@@ -35,6 +35,7 @@
   <symbol id="i-hilal" viewBox="0 0 24 24"><path fill="currentColor" d="M15.6 3.6a8.6 8.6 0 1 0 4.8 13.4A7 7 0 0 1 15.6 3.6z"/></symbol>
   <symbol id="i-vakit" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.6"/><path d="M12 6.8V12l3.4 2.2"/><path d="M12 2.2v1.2M12 20.6v1.2M2.2 12h1.2M20.6 12h1.2"/></g></symbol>
   <symbol id="i-alarm" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6.4 16.6V11a5.6 5.6 0 0 1 11.2 0v5.6l1.6 1.9H4.8z"/><path d="M9.9 20.6a2.3 2.3 0 0 0 4.2 0"/><path d="M12 3v2.4"/></g></symbol>
+  <symbol id="i-widget" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></g></symbol>
   <symbol id="i-yarin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.8 17.8h18.4"/><path d="M7.2 17.8a4.8 4.8 0 0 1 9.6 0"/><path d="M12 7.4v2.2M5.3 10.4l1.5 1.5M18.7 10.4l-1.5 1.5"/><path d="M9.6 21h4.8"/></g></symbol>
   <symbol id="i-kible" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.6"/><path d="M12 5.6l2.4 6.4-2.4 6.4-2.4-6.4z"/><path d="M12 5.6l2.4 6.4H9.6z" fill="currentColor" stroke="none"/></g></symbol>
   <symbol id="i-dua" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.6C10 5.2 7.2 4.7 4 5.1v12.6c3.2-.4 6 .1 8 1.5 2-1.4 4.8-1.9 8-1.5V5.1c-3.2-.4-6 .1-8 1.5z"/><path d="M12 6.6v12.6"/></g></symbol>
@@ -87,7 +88,7 @@
       <ul class="guven">
         <li>Hesap yok</li>
         <li>İnternetsiz çalışır</li>
-        <li>Konumun telefonunda kalır</li>
+        <li>Konumun reklama eklenmez</li>
       </ul>
     </div>
   </section>
@@ -132,12 +133,13 @@
       </header>
 
       <ol class="dizin" role="list">
-        <li><a href="#vakit"><svg aria-hidden="true"><use href="#i-vakit"/></svg><span class="dizin__ad">Namaz vakitleri</span><span class="dizin__alt">Konumuna göre, Diyanet yöntemiyle</span></a></li>
+        <li><a href="#vakit"><svg aria-hidden="true"><use href="#i-vakit"/></svg><span class="dizin__ad">Namaz vakitleri</span><span class="dizin__alt">Bulunduğun ilçeye göre, Diyanet yöntemiyle</span></a></li>
         <li><a href="#alarm"><svg aria-hidden="true"><use href="#i-alarm"/></svg><span class="dizin__ad">Vakit alarmı</span><span class="dizin__alt">Vakit girince alarm, istersen öncesinde hatırlatma</span></a></li>
         <li><a href="#yarin-sabah"><svg aria-hidden="true"><use href="#i-yarin"/></svg><span class="dizin__ad">Yarın sabah çalacak mı?</span><span class="dizin__alt">İzinleri ve sıradaki uyarıyı tek ekranda gösterir</span></a></li>
+        <li><a href="#widgetlar"><svg aria-hidden="true"><use href="#i-widget"/></svg><span class="dizin__ad">Widget’lar</span><span class="dizin__alt">Kilit ekranında ve ana ekranda sıradaki vakit</span></a></li>
         <li><a href="#kible"><svg aria-hidden="true"><use href="#i-kible"/></svg><span class="dizin__ad">Kıble pusulası</span><span class="dizin__alt">Kâbe’yi tepeye getir, titreşimle haber verir</span></a></li>
-        <li><a href="#dualar"><svg aria-hidden="true"><use href="#i-dua"/></svg><span class="dizin__ad">Dualar</span><span class="dizin__alt">Yaklaşık 80 dua, künyesiyle</span></a></li>
-        <li><a href="#temalar"><svg aria-hidden="true"><use href="#i-tema"/></svg><span class="dizin__ad">15 tema</span><span class="dizin__alt">Hepsi ücretsiz</span></a></li>
+        <li><a href="#dualar"><svg aria-hidden="true"><use href="#i-dua"/></svg><span class="dizin__ad">Dualar</span><span class="dizin__alt">80 dua, künyesiyle</span></a></li>
+        <li><a href="#temalar"><svg aria-hidden="true"><use href="#i-tema"/></svg><span class="dizin__ad">23 tema</span><span class="dizin__alt">Hepsi ücretsiz</span></a></li>
       </ol>
 
       <!-- I · Vakit -->
@@ -145,7 +147,7 @@
         <div class="bolum__metin belir">
           <p class="bolum__no"><span aria-hidden="true">I</span>Namaz vakti</p>
           <h3 id="b1">Bulunduğun noktanın vakti</h3>
-          <p>Namaz vakitleri konumuna göre, her ilçe ve her nokta için Diyanet İşleri Başkanlığı’nın yöntemiyle hesaplanır. Hesap telefonunda yapılır; internet gerekmez.</p>
+          <p>Türkiye’de namaz vakitleri bulunduğun ilçenin Diyanet takvimine göre, yurt dışında bulunduğun yere göre, Diyanet İşleri Başkanlığı’nın yöntemiyle hesaplanır. Hesap telefonunda yapılır; internet gerekmez.</p>
           <ul class="imler">
             <li>Konum izni vermek zorunda değilsin; vermezsen yerini listeden seçebilirsin.</li>
           </ul>
@@ -190,9 +192,10 @@
         <div class="bolum__metin belir">
           <p class="bolum__no"><span aria-hidden="true">II</span>Vakit alarmı</p>
           <h3 id="b2">Vakit girince alarm, istersen öncesinde hatırlatma</h3>
-          <p>Her vakit için ayrı seçersin: alarm, kısa ses, ses yok ya da kapalı. İstersen vakitten birkaç dakika önce de bir bildirimle haber verir.</p>
-          <p id="yarin-sabah"><strong>“Yarın sabah çalacak mı?”</strong> ekranında izin durumunu ve sıradaki planlı uyarıyı görürsün; deneme alarmı da kurabilirsin.</p>
-          <p class="guvence"><svg aria-hidden="true"><use href="#i-kalkan"/></svg>Alarmlarda ve bildirimlerde reklam yoktur.</p>
+          <p>İlk açılışta hangi vakitlerde haber verileceğini seçersin; altı vaktin hepsi işaretli gelir. Her vakit için ayrı seçersin: alarm, kısa ses, ses yok ya da kapalı. Sabah namazı uyarısını imsakta ya da imsaktan 20, 30, 45 veya 60 dakika sonra alabilirsin. İstersen vakitten 5, 10, 15 ya da 30 dakika önce de bir bildirimle haber verir; alarmda bir <strong>10 dk sonra</strong> düğmesi de açabilirsin.</p>
+          <p>Uyarı sesini 16 ses arasından seçersin: <strong>Ezan</strong>, altı kısa bildirim sesi, şadırvan, dere, kuş, bülbül, yağmur ve dalga gibi doğa sesleri ya da tesbih; varsayılan kısa bir bildirim sesidir. Ezan yalnız öğle, ikindi, akşam ve yatsı vakti girince çalar; İmsak ve Güneş uyarısında ve vakitten önceki hatırlatmada telefonun kendi sesi duyulur. Uygulamada tam ezan kaydı yoktur; “Ezan” adlı ses, bir ezan kaydının açılışındaki tekbirden alınmış 8 saniyelik kısa bir kesittir.</p>
+          <p id="yarin-sabah"><strong>“Yarın sabah çalacak mı?”</strong> ekranında izin durumunu ve sıradaki planlı uyarıyı görürsün; deneme alarmı da kurabilirsin. Odak ya da Rahatsız Etmeyin açıkken bildirimler sessiz gelir.</p>
+          <p class="guvence"><svg aria-hidden="true"><use href="#i-kalkan"/></svg>Alarmlarda, bildirimlerde ve widget’larda reklam yoktur.</p>
         </div>
         <figure class="bolum__gorsel belir">
           <div class="ikili">
@@ -207,10 +210,49 @@
         </figure>
       </article>
 
-      <!-- III · Kıble -->
-      <article class="bolum" id="kible" aria-labelledby="b3">
+      <!-- III · Widget'lar -->
+      <article class="bolum" id="widgetlar" aria-labelledby="bw">
         <div class="bolum__metin belir">
-          <p class="bolum__no"><span aria-hidden="true">III</span>Kıble</p>
+          <p class="bolum__no"><span aria-hidden="true">III</span>Widget’lar</p>
+          <h3 id="bw">Uygulamayı açmadan sıradaki vakit</h3>
+          <p>Kilit ekranında iki widget yan yana tek şerit olur: solda İmsak, Güneş ve Öğle, sağda İkindi, Akşam ve Yatsı; sıradaki vakit kalın yazılır. Saatin üstündeki tek satırlık widget sıradaki vakte kalan süreyi gösterir.</p>
+          <p>Ana ekranda küçük, orta ve büyük boyda widget: sıradaki vakit, kalan süre ve günün altı vakti. Alarm çalarken kilit ekranında, Dinamik Ada’lı iPhone’larda Dinamik Ada’da da vakit kartı görünür.</p>
+          <ul class="imler">
+            <li>Widget’lar vakti uygulamayla aynı hesapla, telefonunda gösterir; internet gerekmez.</li>
+            <li>Uygulamayı bir kez açıp ilk kurulumu bitirince vakitler widget’ta görünür.</li>
+          </ul>
+        </div>
+        <figure class="bolum__gorsel kilit-kap belir">
+          <svg class="kilit" viewBox="0 0 400 260" role="img" aria-labelledby="kilit-t">
+            <title id="kilit-t">Kilit ekranı çizimi: saatin üstünde “İkindi’ye 1 sa. 7 dk.” yazan tek satırlık widget; saatin altında yan yana iki widget, solda İmsak 05:06, Güneş 06:30, Öğle 12:46, sağda İkindi 16:11 (sıradaki vakit, kalın ve altında nokta), Akşam 18:52, Yatsı 20:10.</title>
+            <defs>
+              <linearGradient id="kilit-zemin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#152034"/><stop offset="1" stop-color="#0a0e19"/></linearGradient>
+            </defs>
+            <rect x="2" y="2" width="396" height="256" rx="26" fill="url(#kilit-zemin)" stroke="#ccab6b" stroke-opacity=".22"/>
+            <text class="kilit__satir" x="200" y="46" text-anchor="middle">İkindi’ye 1 sa. 7 dk.</text>
+            <text class="kilit__saat" x="200" y="122" text-anchor="middle">15:04</text>
+            <g fill="none" stroke="#ccab6b" stroke-opacity=".3" stroke-dasharray="3 5">
+              <rect x="12" y="150" width="184" height="88" rx="16"/>
+              <rect x="204" y="150" width="184" height="88" rx="16"/>
+            </g>
+            <g text-anchor="middle">
+              <text class="kilit__ad" x="44" y="180">İmsak</text><text class="kilit__vakit kilit__gecmis" x="44" y="208">05:06</text>
+              <text class="kilit__ad" x="104" y="180">Güneş</text><text class="kilit__vakit kilit__gecmis" x="104" y="208">06:30</text>
+              <text class="kilit__ad" x="164" y="180">Öğle</text><text class="kilit__vakit kilit__gecmis" x="164" y="208">12:46</text>
+              <text class="kilit__ad kilit__siradaki" x="236" y="180">İkindi</text><text class="kilit__vakit kilit__siradaki" x="236" y="208">16:11</text>
+              <text class="kilit__ad" x="296" y="180">Akşam</text><text class="kilit__vakit kilit__gelecek" x="296" y="208">18:52</text>
+              <text class="kilit__ad" x="356" y="180">Yatsı</text><text class="kilit__vakit kilit__gelecek" x="356" y="208">20:10</text>
+            </g>
+            <circle cx="236" cy="222" r="2.5" fill="#f3e9d6"/>
+          </svg>
+          <figcaption class="sekil"><span class="sekil__no">Şekil 4</span> Şematik çizim: kilit ekranında tek satırlık widget ve yan yana iki widget’tan oluşan vakit şeridi. Sıradaki vakit kalın, altında nokta.</figcaption>
+        </figure>
+      </article>
+
+      <!-- IV · Kıble -->
+      <article class="bolum bolum--ters" id="kible" aria-labelledby="b3">
+        <div class="bolum__metin belir">
+          <p class="bolum__no"><span aria-hidden="true">IV</span>Kıble</p>
           <h3 id="b3">Kıble pusulası</h3>
           <p>Telefonunu çevir, Kâbe’yi tepeye getir; yönü bulduğunda titreşimle haber verir. Kıble yönü de telefonunda, internetsiz hesaplanır.</p>
         </div>
@@ -231,16 +273,16 @@
             </svg>
             <img class="pusula__kabe" src="varliklar/sahne/kabe.webp" alt="" width="96" height="103" loading="lazy" decoding="async">
           </div>
-          <figcaption class="sekil"><span class="sekil__no">Şekil 4</span> Çizim: iğne tepedeki Kâbe’yi gösterir.</figcaption>
+          <figcaption class="sekil"><span class="sekil__no">Şekil 5</span> Çizim: iğne tepedeki Kâbe’yi gösterir.</figcaption>
         </figure>
       </article>
 
-      <!-- IV · Dualar -->
-      <article class="bolum bolum--ters" id="dualar" aria-labelledby="b4">
+      <!-- V · Dualar -->
+      <article class="bolum" id="dualar" aria-labelledby="b4">
         <div class="bolum__metin belir">
-          <p class="bolum__no"><span aria-hidden="true">IV</span>Dualar</p>
+          <p class="bolum__no"><span aria-hidden="true">V</span>Dualar</p>
           <h3 id="b4">Kaynağıyla, künyesiyle dualar</h3>
-          <p>Yaklaşık 80 dua; Arapçası, okunuşu ve anlamıyla. Her gün bir <strong>günün duası</strong>, Cuma, kandil ve bayram gibi günlere özel dualar.</p>
+          <p>80 dua; Arapçası, okunuşu ve anlamıyla. Her gün bir <strong>günün duası</strong>; Cuma, Ramazan, Kadir Gecesi, Kurban Bayramı ve arefesi gibi günlere özel dualar. Kandiller ve diğer dini günler adıyla görünür.</p>
           <ul class="imler">
             <li>Dualar hadis kaynaklıdır.</li>
             <li>Her duanın altında künyesi yazar.</li>
@@ -250,18 +292,18 @@
           <div class="telefon telefon--tek">
             <img src="varliklar/ekranlar/dua-detay-320.webp" srcset="varliklar/ekranlar/dua-detay-320.webp 320w, varliklar/ekranlar/dua-detay-640.webp 640w" sizes="(min-width: 900px) 236px, 206px" alt="Sabah ve Akşam Zikirleri ekranı: Sübhânallâhi ve bi-hamdih ile Seyyidü’l-istiğfâr dualarının Arapçası, okunuşu ve Türkçe anlamı; altlarında Buhârî ve Müslim künyeleri" width="320" height="695" loading="lazy" decoding="async">
           </div>
-          <figcaption class="sekil"><span class="sekil__no">Şekil 5</span> Dualar: Arapça metin, okunuş ve anlam; altında künyesi.</figcaption>
+          <figcaption class="sekil"><span class="sekil__no">Şekil 6</span> Dualar: Arapça metin, okunuş ve anlam; altında künyesi.</figcaption>
         </figure>
       </article>
 
     </div>
 
-    <!-- V · Temalar: ritmi kıran tam genişlik şerit -->
+    <!-- VI · Temalar: ritmi kıran tam genişlik şerit -->
     <article class="bolum-serit" id="temalar" aria-labelledby="b5">
       <div class="kap">
         <div class="bolum__metin bolum__metin--orta belir">
-          <p class="bolum__no"><span aria-hidden="true">V</span>Temalar</p>
-          <h3 id="b5">15 tema, hepsi ücretsiz</h3>
+          <p class="bolum__no"><span aria-hidden="true">VI</span>Temalar</p>
+          <h3 id="b5">23 tema, hepsi ücretsiz</h3>
           <p>Gece mavisinden traverten avluya, ekranı zevkine göre giydir. Temaların hiçbiri ücretli değildir.</p>
         </div>
       </div>
@@ -277,8 +319,8 @@
           </ul>
         </div>
         <figcaption class="kap temalar__alt">
-          <span class="sekil" id="temalar-t"><span class="sekil__no">Şekil 6</span> On beş temanın altısının arka planı.</span>
-          <span class="temalar__diger"><span>ve dokuz tema daha:</span> Koyu&nbsp;Stüdyo&nbsp;· Aydınlık&nbsp;· Yüksek&nbsp;Kontrast&nbsp;· Girih&nbsp;· Gece&nbsp;Seher&nbsp;· Pafta&nbsp;· Minimal&nbsp;· Ramazan&nbsp;· Kandil</span>
+          <span class="sekil" id="temalar-t"><span class="sekil__no">Şekil 7</span> Temalardan altısının arka planı.</span>
+          <span class="temalar__diger"><span>ve daha fazlası, örneğin:</span> Hat&nbsp;· Koyu&nbsp;Stüdyo&nbsp;· Aydınlık&nbsp;· Yüksek&nbsp;Kontrast&nbsp;· Gece&nbsp;Seher&nbsp;· Minimal&nbsp;· Ramazan&nbsp;· Kandil</span>
         </figcaption>
       </figure>
     </article>
@@ -299,15 +341,15 @@
           </li>
           <li>
             <h3><svg aria-hidden="true"><use href="#i-cevrimdisi"/></svg>İnternetsiz</h3>
-            <p>Vakitler, vakit alarmı ve kıble telefonunda hesaplanır ve internetsiz çalışır.</p>
+            <p>Vakitler, vakit alarmı, widget’lar ve kıble telefonunda hesaplanır ve internetsiz çalışır.</p>
           </li>
           <li>
-            <h3><svg aria-hidden="true"><use href="#i-konum"/></svg>Konumun sende</h3>
-            <p>Konumun telefonundan çıkmaz.</p>
+            <h3><svg aria-hidden="true"><use href="#i-konum"/></svg>Konum yalnız vakit için</h3>
+            <p>Konumun vakit ve kıble hesabı için telefonunda kullanılır; reklama eklenmez.</p>
           </li>
           <li>
-            <h3><svg aria-hidden="true"><use href="#i-reklam"/></svg>Tek, küçük reklam</h3>
-            <p>Giderleri karşılamak için ana ekranın altında küçük, kişiselleştirilmemiş bir reklam gösterilir. Alarmlarda ve bildirimlerde reklam yoktur.</p>
+            <h3><svg aria-hidden="true"><use href="#i-reklam"/></svg>Kişiselleştirilmemiş reklam</h3>
+            <p>Giderleri karşılamak için ana ekranın altında küçük bir reklam, Dualar, Günün Duası ve Temalar ekranına girerken en çok 3 dakikada bir tam ekran reklam gösterilir. Alarmlarda, bildirimlerde ve widget’larda reklam yoktur.</p>
           </li>
         </ul>
         <p class="ilke-alt"><a class="bag" href="gizlilik.html">Gizlilik politikasının tamamı <span aria-hidden="true">→</span></a></p>
@@ -321,22 +363,23 @@
       <div class="hesap__metin belir">
         <p class="ust-yazi">Yöntem</p>
         <h2 id="hesap-baslik">Vakitler nasıl hesaplanıyor?</h2>
-        <p class="bas-harf">Diyanet İşleri Başkanlığı’nın yöntemiyle (imsak 18°, yatsı Türkiye’de 17°, Diyanet’in 16° kullandığı ülkelerde 16°; temkin uygulamalı), bulunduğun yerin koordinatına göre, telefonunda hesaplanır. Diyanet bir ilçenin takvimini o ilçedeki tek bir nokta için yayınlar. Aynı nokta için karşılaştırdığımızda (Türkiye’de 243 bölge, 396 gün) fark hiçbir gün 1 dakikayı geçmedi ve hep ihtiyatlı yönde kaldı: imsak ve güneş hiç daha geç, diğer vakitler hiç daha erken çıkmadı.</p>
-        <p>Bulunduğun nokta Diyanet’in noktasından farklıysa vakit senin noktana göre hesaplanır; bu yüzden ilçe takviminden birkaç dakika farklı görebilirsin. Yurt dışında yaz aylarında imsak erken, yatsı geç tutulur; bu günler uygulamada “tahmini” diye işaretlenir.</p>
+        <p class="bas-harf">Diyanet İşleri Başkanlığı’nın yöntemiyle (imsak 18°, yatsı Türkiye’de 17°, yurt dışında ülkeye göre değişir; temkin uygulamalı), telefonunda hesaplanır. Diyanet bir ilçenin takvimini o ilçedeki tek bir nokta için yayınlar. Türkiye’de uygulama bulunduğun ilçeyi ilçe sınırından bulur ve vakti o ilçenin takviminin noktasında hesaplar; bu noktaları Diyanet’in yayınladığı vakitlerden çıkardık. 869 bölgenin takvimini 396 gün karşılaştırdığımızda vakitlerin %98’i aynı dakika çıktı; kalanında fark 1 dakikaydı ve ihtiyatlı yöndeydi (imsak ve güneş erken, diğer vakitler geç).</p>
+        <p>İlçe sınırına yakınsan telefonun konumu komşu ilçeyi gösterebilir; o zaman komşu ilçenin takvimi gelir. Yurt dışında vakit bulunduğun yerin koordinatına göre hesaplanır; özellikle yaz aylarında Diyanet takviminden fark daha büyük olabilir; bu günler uygulamada “tahmini” diye işaretlenir.</p>
       </div>
       <aside class="defter belir" aria-labelledby="defter-t">
         <h3 class="gorunmez" id="defter-t">Hesap yönteminin özeti</h3>
         <dl class="defter__sayilar">
-          <div><dt>Türkiye’de karşılaştırılan bölge</dt><dd>243</dd></div>
+          <div><dt>Türkiye’de karşılaştırılan bölge</dt><dd>869</dd></div>
           <div><dt>Karşılaştırılan gün</dt><dd>396</dd></div>
-          <div><dt>Aynı noktada en büyük fark</dt><dd>≤ 1 dk</dd></div>
+          <div><dt>Aynı dakika</dt><dd>%98</dd></div>
+          <div><dt>En büyük fark</dt><dd>1 dk</dd></div>
         </dl>
         <dl class="defter__tablo">
           <div><dt>Yöntem</dt><dd>Diyanet İşleri Başkanlığı’nın yöntemi</dd></div>
-          <div><dt>İmsak</dt><dd>18°</dd></div>
-          <div><dt>Yatsı</dt><dd>Türkiye’de 17°, Diyanet’in 16° kullandığı ülkelerde 16°</dd></div>
+          <div><dt>İmsak</dt><dd>18°; yurt dışında 44° kuzeyinde yazın bazı günler takdirle</dd></div>
+          <div><dt>Yatsı</dt><dd>Türkiye’de 17°; yurt dışında ülkeye göre değişir</dd></div>
           <div><dt>Temkin</dt><dd>Uygulanır</dd></div>
-          <div><dt>Nerede</dt><dd>Telefonunda, bulunduğun yerin koordinatına göre</dd></div>
+          <div><dt>Nerede</dt><dd>Telefonunda; Türkiye’de bulunduğun ilçenin takvimine, yurt dışında bulunduğun yerin koordinatına göre</dd></div>
         </dl>
       </aside>
     </div>
@@ -355,12 +398,12 @@
         </a>
         <div class="not-kart">
           <svg aria-hidden="true"><use href="#i-bilgi"/></svg>
-          <p>Uygunsuz bir reklam görürsen reklamın üstündeki <strong>Bildir</strong> bağlantısını kullan ya da bize yaz; reklamı engelleriz.</p>
+          <p>Uygunsuz bir reklam görürsen ana ekrandaki reklamın üstündeki <strong>Bildir</strong> bağlantısını ya da <strong class="yol">Menü → Ayarlar → Reklam → Son reklamı bildir</strong> satırını kullan, ya da bize yaz; inceleyip engelleriz.</p>
         </div>
       </div>
 
       <div class="adimlar-kart belir">
-        <h3>Ezan çalmıyorsa</h3>
+        <h3>Alarm çalmıyorsa</h3>
         <ol class="adimlar" role="list">
           <li><span>Uygulamada <strong class="yol">Menü → Uyarılar → Yarın sabah çalacak mı?</strong> ekranını aç. İzin durumunu ve sıradaki planlı uyarıyı orada görürsün; deneme alarmı da kurabilirsin.</span></li>
           <li><span>iPhone <strong class="yol">Ayarlar → Ezan Saati Uygulaması</strong> altında bildirim ve alarm izinlerinin açık olduğunu kontrol et.</span></li>
@@ -373,7 +416,7 @@
         <div class="sss__liste">
           <details>
             <summary>Konum izni vermek zorunda mıyım?</summary>
-            <p>Hayır. Konum izni vermek zorunda değilsin; vermezsen yerini listeden seçebilirsin. Konumun telefonundan çıkmaz.</p>
+            <p>Hayır. Konum izni vermek zorunda değilsin; vermezsen yerini listeden seçebilirsin. Vakit ve kıble hesabı telefonunda yapılır; konumun reklama eklenmez.</p>
           </details>
           <details>
             <summary>Hesap açmam gerekiyor mu?</summary>
@@ -385,11 +428,23 @@
           </details>
           <details>
             <summary>Reklam nerede görünür?</summary>
-            <p>Giderleri karşılamak için yalnız ana ekranın altında küçük, kişiselleştirilmemiş bir reklam gösterilir. Alarmlarda ve bildirimlerde reklam yoktur. Uygunsuz bir reklam görürsen reklamın üstündeki <strong>Bildir</strong> bağlantısını kullan ya da bize yaz.</p>
+            <p>Giderleri karşılamak için iki yerde kişiselleştirilmemiş reklam gösterilir: ana ekranın altında küçük bir banner ve Dualar, Günün Duası ya da Temalar ekranına girerken en çok 3 dakikada bir tam ekran reklam. Reklam o an hazır değilse ekran beklemeden açılır. Uygulama açılırken, Kıble’de, tema seçip onayladığında ve uygulamayı alarmdan ya da bildirimden açtığında tam ekran reklam çıkmaz. Alarmlarda, bildirimlerde ve widget’larda reklam yoktur. Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre’de reklamlardan önce Google’ın izin formu çıkar; seçimini <strong>Menü → Ayarlar → Reklam → Reklam gizlilik seçenekleri</strong> satırından değiştirebilirsin. Uygunsuz bir reklam görürsen ana ekrandaki reklamın üstündeki <strong>Bildir</strong> bağlantısını ya da <strong>Menü → Ayarlar → Reklam → Son reklamı bildir</strong> satırını kullan, ya da bize yaz.</p>
           </details>
           <details>
-            <summary>Vakitler neden ilçe takviminden farklı olabilir?</summary>
-            <p>Diyanet bir ilçenin takvimini o ilçedeki tek bir nokta için yayınlar. Bulunduğun nokta Diyanet’in noktasından farklıysa vakit senin noktana göre hesaplanır; bu yüzden ilçe takviminden birkaç dakika farklı görebilirsin. <a href="#hesap">Yöntemin ayrıntısı</a></p>
+            <summary>Widget nasıl eklenir?</summary>
+            <p>Kilit ekranı için kilit ekranını basılı tut, <strong>Özelleştir</strong>’e dokun, saatin altındaki alana Ezan Saati Uygulaması’nın “Sabah vakitleri” ve “Akşam vakitleri” widget’larını yan yana ekle; saatin üstündeki satıra “Sıradaki vakit”i koyabilirsin. Ana ekran için boş bir yeri basılı tut, <strong>Düzenle → Widget Ekle</strong>’ye dokun ve “Namaz vakitleri”ni seç. Widget’ta “Vakitler için uygulamayı aç” yazıyorsa uygulamayı bir kez açıp ilk kurulumu bitir; telefon yeniden başladıysa kilidi bir kez açınca vakitler gelir.</p>
+          </details>
+          <details>
+            <summary>Sabah namazı uyarısı ne zaman gelir?</summary>
+            <p>Sabah namazının vakti imsakla girer; uyarı varsayılan olarak imsakta gelir. <strong>Menü → Uyarılar</strong>’daki İmsak satırından imsaktan 20, 30, 45 ya da 60 dakika sonrasını seçebilirsin. Diyanet ayrı bir “sabah ezanı saati” yayınlamadığı için uygulama böyle bir saat göstermez; dakikayı sen seçersin.</p>
+          </details>
+          <details>
+            <summary>Ezan sesi var mı?</summary>
+            <p>Tam ezan kaydı yoktur. Uyarı sesleri arasındaki “Ezan”, bir ezan kaydının açılışındaki tekbirden alınmış 8 saniyelik kısa bir kesittir. Ezan yalnız öğle, ikindi, akşam ve yatsı vakti girince çalar; İmsak ve Güneş uyarısında ve vakitten önceki hatırlatmada telefonun kendi sesi duyulur. Varsayılan uyarı sesi kısa bir bildirim sesidir; istersen Ezan’ı, öteki bildirim seslerinden birini, doğa seslerinden birini ya da tesbih sesini seçebilirsin.</p>
+          </details>
+          <details>
+            <summary>Vakitler ilçe takviminden farklı olabilir mi?</summary>
+            <p>Türkiye’de vakit bulunduğun ilçenin Diyanet takvimine göre hesaplanır; karşılaştırdığımız günlerde vakitlerin %98’i aynı dakika çıktı, kalanında fark 1 dakikaydı (imsak ve güneş erken, diğer vakitler geç). İlçe sınırına yakınsan telefonun konumu komşu ilçeyi gösterebilir; o zaman komşu ilçenin takvimi gelir. <a href="#hesap">Yöntemin ayrıntısı</a></p>
           </details>
           <details>
             <summary>Diyanet’in resmî uygulaması mı?</summary>
@@ -430,6 +485,7 @@
       <div class="antet__iletisim"><dt>İletişim</dt><dd><a href="mailto:ezansaatiuygulamasi@gmail.com">ezansaatiuygulamasi<wbr>@gmail.com</a></dd></div>
     </dl>
     <p class="alt__not">Ezan Saati Uygulaması, Diyanet İşleri Başkanlığı ile resmî bir bağı olmayan bağımsız bir uygulamadır.</p>
+    <p class="alt__not">İlçe sınırı verisi © OpenStreetMap katkıcılarının verisinden türetildi ve <a href="veri/LISANS.txt">ODbL 1.0 lisansıyla sunulur</a>; türetilmiş veri: <a href="veri/ilce-sinir.geojson">ilce-sinir.geojson</a>, <a href="veri/ilce-sinir.bin">ilce-sinir.bin</a>.</p>
   </div>
 </footer>
 </body>
