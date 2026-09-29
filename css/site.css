@@ -244,12 +244,15 @@ h3 { font-size: clamp(1.55rem, 1.25rem + 1vw, 2.05rem); line-height: 1.2; text-w
   text-shadow: 0 1px 18px rgba(5, 8, 15, 0.9);
 }
 
-/* "Yakında App Store'da": düğme ya da rozet DEĞİL, bir durum yazısı.
-   Çerçeve, dolgu ve üzerine gelme etkisi bilinçli olarak yok; yanında hilal mührü. */
+/* "Ücretsiz indir — App Store'da" (29-09 yayın; önceden "Yakında"): sade bir bağlantı, rozet değil.
+   Çerçeve ve dolgu yok; yanında hilal mührü, üzerine gelince yalnız alt satırın altı çizilir. */
 .yakinda {
   display: inline-flex; align-items: center; gap: 12px;
-  margin: 22px auto 0; text-align: left; color: var(--fildisi); cursor: default;
+  margin: 22px auto 0; text-align: left; color: var(--fildisi); cursor: pointer;
+  text-decoration: none;
 }
+.yakinda:hover .yakinda__alt { text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
+.yakinda:focus-visible { outline: 2px solid var(--altin-parlak); outline-offset: 6px; border-radius: 10px; }
 .yakinda__muhur {
   width: 40px; height: 40px; flex: none; display: grid; place-items: center;
   border-radius: 50%; border: 1px solid rgba(204, 171, 107, 0.5); color: var(--altin-parlak);
